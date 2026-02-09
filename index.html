@@ -435,6 +435,28 @@
   </script>
 </body>
 
+<script>
+  // Add "reveal" to everything inside body (except welcome)
+  document.addEventListener("DOMContentLoaded", () => {
+    const welcome = document.getElementById("welcome");
+
+    // Wrap your main content (if you already have a wrapper, just add class="reveal")
+    const wrap = document.querySelector(".wrap") || document.body;
+    wrap.classList.add("reveal");
+
+    // Simulate load timing like the reference site
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        wrap.classList.add("is-ready");
+      }, 150);
+
+      setTimeout(() => {
+        welcome.classList.add("is-done");
+      }, 900);
+    });
+  });
+</script>
+  
 <!-- WELCOME OVERLAY -->
 <div class="welcome" id="welcome">
   <div class="welcome__inner">
@@ -448,4 +470,5 @@
 </div>
   
 </html>
+
 
